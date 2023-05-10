@@ -25,7 +25,7 @@ app.use(express.urlencoded({extended:false}))
 
 //Database Connection
 mongoose
-.connect('mongodb://127.0.0.1:27017/pizza')
+.connect('mongodb+srv://mishrashivanshu2004:Shiva_23@cluster0.yxnfpqd.mongodb.net/pizza')
 .then(()=>console.log("Mongodb connected"))
 .catch((err)=>console.log("Mongo Error" ,err));
 
@@ -44,7 +44,7 @@ app.use(session({
     secret: process.env.COOKIE_SECRET,
     resave: false,
     store: MongoDbStore.create({
-        mongoUrl :'mongodb://127.0.0.1:27017/pizza'
+        mongoUrl :'mongodb+srv://mishrashivanshu2004:Shiva_23@cluster0.yxnfpqd.mongodb.net/pizza'
     }),
     saveUninitialized:false,
     cookie:{maxAge: 1000*60*60*24} //24 hours
